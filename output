@@ -1,0 +1,14 @@
+nohup: ignoring input
+(node:4645) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+login
+{ _id: 58f52868e84ec21181b931f8,
+  email: 'c@gmail.com',
+  hashed_password: 'PiPoFgA5WUoziU9lZOGxNIu9egCI1CxKy3PurtWcAJ0=',
+  username: 'a',
+  __v: 0 }
+login
+{ _id: 58f52868e84ec21181b931f8,
+  email: 'c@gmail.com',
+  hashed_password: 'PiPoFgA5WUoziU9lZOGxNIu9egCI1CxKy3PurtWcAJ0=',
+  username: 'a',
+  __v: 0 }

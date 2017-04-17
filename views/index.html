@@ -1,0 +1,97 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <link rel="stylesheet" type="text/css" 
+      href="/static/css/styles.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- include our dependency on angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="static/css/c-3.css?14">
+  <meta charset="utf-8">
+  <title>Health for Life</title>
+
+
+
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Welcome. You are Logged In as <%= username %></h2>
+    <a href="/logout">logout</a>
+  </div>
+  <hr>
+
+
+
+  <div  ng-controller='myCtrl'>
+         <ui-view></ui-view>
+         <script type="text/ng-template" id="/home.html">
+            <h1>Healthy weight for life</h1>
+            <div id="buttons">
+            
+            <figure ng-repeat-start="i in tiles" ng-click="setTile(i)">
+              <img src="/static/images/{{i.src}}">
+              <figcaption>{{i.caption}}</figcaption>
+            </figure>
+            <br ng-if="$index==3 || $index==7" ng-repeat-end>
+            <a href="#/table" class="button">View Chart</a>
+            </div>
+            
+         </script>
+         <script type="text/ng-template" id="/table.html">
+            <a class="button" role="button" href="#/home" class="pull-left">Back</a>
+            <h1>My Daily Health</h1>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+            <th></th>
+                  <th colspan="4">Meals</th>
+                  <th colspan="4">All Day</th>
+                  <th colspan="4">Thoughts</th>
+                </tr>
+                <tr>
+            <th>Day</th>
+            <th>Green Drink</th>
+            <th>Healthy Breakfast</th>
+            <th>Balanced Lunch</th>
+            <th>Light Dinner</th>
+            <th>Weight</th>
+            <th>Exercise</th>
+            <th>Good Snacks</th>
+            <th>Lemon Water</th>
+            <th>Reduce Stress</th>
+            <th>Affirmations</th>
+            <th>Think Thin</th>
+            <th>Good Night Sleep</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in entries">
+                  <td>{{x.Day}}</td>
+                  <td>{{x.Drink ? "X" : ""}}</td>
+                  <td>{{x.Brkfst ? "X" : ""}}</td>
+                  <td>{{x.Lunch ? "X" : ""}}</td>
+                  <td>{{x.Dinner ? "X" : ""}}</td>
+                  <td>{{x.Weigh ? "X" : ""}}</td>
+                  <td>{{x.Exercise ? "X" : ""}}</td>
+                  <td>{{x.Snacks ? "X" : ""}}</td>
+                  <td>{{x.Lemon ? "X" : ""}}</td>
+                  <td>{{x.Stress ? "X" : ""}}</td>
+                  <td>{{x.Affirm ? "X" : ""}}</td>
+                  <td>{{x.Think ? "X" : ""}}</td>
+                  <td>{{x.Sleep ? "X" : ""}}</td>      
+            
+                </tr> 
+              </tbody>
+            </table>
+            
+         </script>
+      </div>
+
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="/static/js/my_app.js"></script>
+
+
+</body>
+</html>
